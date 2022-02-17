@@ -24,17 +24,7 @@ def predict_label(password):
     pred = model.predict(inp)
     return dick[pred[0]]
 
-# routes
 
-
-@app.route("/", methods=['GET', 'POST'])
-def kuch_bhi():
-    return render_template("home.html")
-
-
-@app.route("/about")
-def about_page():
-    return "About You..!!!"
 
 
 @app.route("/submit", methods=['GET', 'POST'])
