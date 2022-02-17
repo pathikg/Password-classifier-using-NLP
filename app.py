@@ -14,7 +14,7 @@ def word_char(inputs):
     return a
 
 
-xgboost_dict = load(open('xgb_pipeline_objects.pkl', 'rb'))
+xgboost_dict = load(open('xgb_pipeline_objects.joblib', 'rb'))
 
 
 def predict_label(password):
@@ -26,6 +26,9 @@ def predict_label(password):
 
 
 
+@app.route("/", methods=['GET', 'POST'])
+def home():
+    return render_template("home.html")
 
 @app.route("/submit", methods=['GET', 'POST'])
 def prediction():
