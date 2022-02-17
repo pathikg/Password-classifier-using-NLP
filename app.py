@@ -4,7 +4,7 @@ import xgboost
 
 app = Flask(__name__)
 
-dick = {0: 'weak', 1: 'moderate', 2: "strong"}
+dict = {0: 'weak', 1: 'moderate', 2: "strong"}
 
 
 def word_char(inputs):
@@ -22,7 +22,7 @@ def predict_label(password):
     model = xgboost_dict['model']
     inp = vect.transform([password])
     pred = model.predict(inp)
-    return dick[pred[0]]
+    return dict[pred[0]]
 
 
 
